@@ -28,6 +28,7 @@ public class OrderService {
 
     /**
      * 재고 감소 -> 동시성 고민
+     * optimistic lock / pessimistic lock / ...
      */
     public OrderResponse createOrder(OrderCreateRequest request, LocalDateTime registeredDateTime) {
         List<String> productNumbers = request.getProductNumbers();
