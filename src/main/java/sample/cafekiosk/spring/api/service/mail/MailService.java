@@ -13,7 +13,6 @@ public class MailService {
     private final MailSendClient mailSendClient;
     private final MailSendHistoryRepository mailSendHistoryRepository;
 
-
     public boolean sendMail(String fromEmail, String toEmail, String subject, String content) {
         boolean result = mailSendClient.sendEmail(fromEmail, toEmail, subject, content);
         if(result){
@@ -23,6 +22,11 @@ public class MailService {
                     .subject(subject)
                     .content(content)
                     .build());
+
+            mailSendClient.a();
+            mailSendClient.b();
+            mailSendClient.c();
+
             return true;
         }
         return false;
